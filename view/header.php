@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Circle of truth</title>
-<link rel="icon" type="image/png" href="img/icon.ico">
+<a href="/Default"><link rel="icon" type="image/png" href="img/icon.ico"></a>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
