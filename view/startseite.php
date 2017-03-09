@@ -3,7 +3,9 @@
 
 
 <div class="mittig_home">
-  <button type="button" class="btn btn-lg btn-success"><a href="login.php">Login</button>
-  <button type="button" class="btn btn-lg btn-danger"><a href="register.php">Register</button>
 
+		<a class="btn btn-lg btn-success" href="/login" role="button">Login</a>
+ 	
+  		<a class="btn btn-lg btn-danger" href="/register" role="button">Registrieren</a>
+	
 </div>
