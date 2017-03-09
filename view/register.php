@@ -8,7 +8,9 @@
 			<input type="password" placeholder="Password" class="form-control">
 		</div>
 		<div class="form-group">
-			<button type="button" class="btn btn-lg btn-danger">Registrieren</button>
+			<div class="button">
+				<button type="button" class="btn btn-lg btn-danger">Registrieren</button>
+			</div>
 		</div>
 	</form>
 

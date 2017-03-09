@@ -18,7 +18,7 @@
 		<nav class="navbar navbar-bbc">
 			<div class="row bbc-vertical-align">
 				<div class="col-xs-2">
-					<a class="logo" href="/default"link><img rel="icon" class="logo" src="img/logo.png"></a>
+					<a class="logo" href="/Default"link><img rel="icon" class="logo" src="img/logo.png"></a>
 				</div>
 				<div class="col-xs-10">
 					<div class="navbar-header">
@@ -37,7 +37,7 @@
 							<li><a href="#">Home</a></li>
 							<li><a href="#">Kürzlich beantwortet</a></li>
 							<li><a href="#">Idee einsenden</a></li>
-							<li><a href="#">�ber uns</a></li>
+							<li><a href="#">&Uumlber uns</a></li>
 							<li><a>Eingeloggt als: <?php $benutzername ?></a></li>
 						</ul>
 					</div>
