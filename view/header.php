@@ -8,6 +8,7 @@
 <link rel="icon" type="image/png" href="img/icon.ico">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
 
 
 </head>
@@ -36,7 +37,7 @@
 							<li><a href="#"></a></li>
 							<li><a href="#">Home</a></li>
 							<li><a href="#">Kürzlich beantwortet</a></li>
-							<li><a href="#">Idee eindenden</a></li>
+							<li><a href="#">Idee einsenden</a></li>
 						</ul>
 					</div>
 
