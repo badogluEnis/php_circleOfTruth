@@ -1,6 +1,6 @@
         <hr>
         <footer>
-          <p>&copy; Circle of thruth 2017</p>
+          <p>&copy; Circle of truth 2017</p>
         </footer>
     </div>
 
