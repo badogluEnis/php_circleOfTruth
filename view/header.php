@@ -34,10 +34,11 @@
 					<div id="navbar" class="collapse navbar-collapse">
 
 						<ul class="nav navbar-nav">
-							<li><a href="#"></a></li>
 							<li><a href="#">Home</a></li>
 							<li><a href="#">KÃ¼rzlich beantwortet</a></li>
 							<li><a href="#">Idee einsenden</a></li>
+							<li><a href="#">Über uns</a></li>
+							<li><a>Eingeloggt als: <?php $benutzername ?></a></li>
 						</ul>
 					</div>
 
