@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Circle of truth</title>
-<a href="/Default"><link rel="icon" type="image/png" href="img/icon.ico"></a>
+<link rel="icon" type="image/png" href="img/icon.ico">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
@@ -18,7 +18,7 @@
 		<nav class="navbar navbar-bbc">
 			<div class="row bbc-vertical-align">
 				<div class="col-xs-2">
-					<a href="#"><img src="img/logo.png" /></a>
+					<a class="logo" href="/default"link><img rel="icon" class="logo" src="img/logo.png"></a>
 				</div>
 				<div class="col-xs-10">
 					<div class="navbar-header">
@@ -37,7 +37,7 @@
 							<li><a href="#">Home</a></li>
 							<li><a href="#">KÃ¼rzlich beantwortet</a></li>
 							<li><a href="#">Idee einsenden</a></li>
-							<li><a href="#">Über uns</a></li>
+							<li><a href="#">ï¿½ber uns</a></li>
 							<li><a>Eingeloggt als: <?php $benutzername ?></a></li>
 						</ul>
 					</div>
