@@ -5,7 +5,7 @@
 			<input type="text" placeholder="Benutzername" class="form-control">
 		</div>
 		<div class="form-group">
-			<input type="password" placeholder="Password" class="form-control">
+			<input type="password" placeholder="Passwort" class="form-control">
 		</div>
 		<div class="form-group">
 			<div class="button">
