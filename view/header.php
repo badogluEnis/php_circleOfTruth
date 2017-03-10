@@ -30,7 +30,7 @@
 		<nav class="navbar navbar-bbc">
 			<div class="row bbc-vertical-align">
 				<div class="col-xs-2">
-					<a class="logo" href="/Default" link><img rel="icon" class="logo"
+					<a class="logo" href="/Default" link><img rel="icon" class="logo" alt="Logo"
 						src="img/logo.png"></a>
 				</div>
 				<div class="col-xs-10">
@@ -62,6 +62,3 @@
 		<div class="container">
 
 <h1><?= $heading ?></h1>
-
-
-   

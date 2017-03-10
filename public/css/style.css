@@ -90,7 +90,7 @@ $view->seite {
 
 h1 {
 	text-align: center;
-	margin-bottom: 40px;
+	margin-bottom: 10px;
 }
 
 h2 {
@@ -98,6 +98,10 @@ h2 {
 	margin-bottom: 120px;
 	color: #3E92CC;
 	font-family: 'Baloo Bhaina', cursive;
+}
+
+h3 {
+	margin-bottom:
 }
 
 .anmelden_registrieren {
@@ -116,4 +120,8 @@ h2 {
 
 .button {
 	margin-bottom: 100px;
+}
+
+#copyright {
+	float: left;
 }
