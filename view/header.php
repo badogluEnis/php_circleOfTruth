@@ -8,7 +8,8 @@
 <link rel="icon" type="image/png" href="img/icon.ico">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina"
+	rel="stylesheet">
 
 
 </head>
@@ -18,7 +19,8 @@
 		<nav class="navbar navbar-bbc">
 			<div class="row bbc-vertical-align">
 				<div class="col-xs-2">
-					<a class="logo" href="/Default"link><img rel="icon" class="logo" src="img/logo.png"></a>
+					<a class="logo" href="/Default" link><img rel="icon" class="logo"
+						src="img/logo.png"></a>
 				</div>
 				<div class="col-xs-10">
 					<div class="navbar-header">
@@ -34,10 +36,10 @@
 					<div id="navbar" class="collapse navbar-collapse">
 
 						<ul class="nav navbar-nav">
-							<li><a href="#">Home</a></li>
-							<li><a href="#">Kürzlich beantwortet</a></li>
-							<li><a href="#">Idee einsenden</a></li>
-							<li><a href="#">&Uumlber uns</a></li>
+							<li><a href="/Default">Home</a></li>
+							<li><a href="/Answered">Kürzlich beantwortet</a></li>
+							<li><a href="/idea">Idee einsenden</a></li>
+							<li><a href="/About">&Uumlber uns</a></li>
 							<li><a>Eingeloggt als: <?php $benutzername ?></a></li>
 						</ul>
 					</div>
@@ -46,6 +48,9 @@
 			</div>
 		</nav>
 
-    <div class="container">
+		<div class="container">
 
-    <h1><?= $heading ?></h1>
+<h1><?= $heading ?></h1>
+
+
+   
