@@ -16,7 +16,7 @@ class ConnectionHandler
       {
           // Prüfen ob bereits eine Verbindung existiert
           if (self::$connection === null) {
-  
+
               // Konfigurationsdatei auslesen
               $config = require '../config.php';
               $host = $config['database']['host'];
