@@ -40,4 +40,26 @@ class IdeaController
 		$view->heading = 'Idee einsenden';
 		$view->display();
 	}
+
+	public function create() {
+
+$passwordPattern = '/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/i';
+
+
+	}
+
+	function isValidAlpha($input) {
+		if (isset ( $input ) && ! empty ( $input )) {
+			return true;
+		}
+			return false;
+		}
+
+		if (isset ( $_POST ["submit"] ) && isValidAlpha ( $_POST ["frage"] ) && isValidAlpha ( $_POST ["antw1"] ) && isValidAlpha ( $_POST ["antw2"] )) {
+
+		$view = new View('submitIdea');
+		$view->heading = 'Idee einsenden';
+		$view->display();
+
+	}
 }

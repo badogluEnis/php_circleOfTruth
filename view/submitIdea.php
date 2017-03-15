@@ -1,5 +1,7 @@
 <h3>Sende uns hier deine Ideen für neue Fragen zu!</h3><br>
-<form id"sende">
+
+
+<form action="/idea/create" class="senden">
 
 <div class="formular">
 
@@ -9,12 +11,12 @@
 
   <div class="col-xs-6 abstand">
      <label for="exampleInputEmail1"></label>
-     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Korrekte Antwortmöglichkeit">
+     <input type="text" name="antw1" class="form-control" id="exampleInputEmail1" placeholder="Korrekte Antwortmöglichkeit">
    </div>
 
    <div class="col-xs-6 abstand">
       <label for="exampleInputEmail1"></label>
-      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Falsche Antwortmöglichkeit">
+      <input type="text" name="antw2" class="form-control" id="exampleInputEmail1" placeholder="Falsche Antwortmöglichkeit">
     </div>
 
         <label>
@@ -22,7 +24,7 @@
         </label>
 
       <div class ="submit">
-        <button type="submit" class="btn btn-success">Absenden</button>
+        <button type="submit" name="submit" class="btn btn-success">Absenden</button>
       </div>
 
       <p class ="radio">* Moralfrage bedeutet, dass es keine richtige Antwort gibt. Trotzdem werden beide Antwortm&oumlglichkeiten ben&oumltigt</p>
