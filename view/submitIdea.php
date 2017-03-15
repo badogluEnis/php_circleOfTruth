@@ -9,12 +9,12 @@
 
   <div class="col-xs-6 abstand">
      <label for="exampleInputEmail1"></label>
-     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Korrekte Antwort">
+     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Korrekte Antwortmöglichkeit">
    </div>
 
    <div class="col-xs-6 abstand">
       <label for="exampleInputEmail1"></label>
-      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Falsche Antwort">
+      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Falsche Antwortmöglichkeit">
     </div>
 
         <label>
