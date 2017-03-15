@@ -1,3 +1,4 @@
+        	</div>
         <hr>
         <footer>
           <p id="copyright">&copy; Circle of truth 2017</p>
