@@ -1,5 +1,7 @@
 <div class="anmelden_registrieren">
 
+
+
 	<form action="" class="register">
 		<div class="form-group">
 			<input type="text" placeholder="Benutzername" class="form-control">

@@ -1,5 +1,3 @@
-<div class="anmelden_registrieren">
-
 	<form action="" class="register">
 		<div class="form-group">
 			<label class="control-label sr-only" for="firstname">First Name</label>
@@ -15,12 +13,15 @@
 			<label class="control-label sr-only" for="password">Passwort</label>
 			<input name="password" data-custom-message="true"
 				pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
-				required="required" placeholder="Password" type="password"
+				required="required" placeholder="Passwort" type="password"
 				class="form-control input-lg" id="password"
 				aria-describedby="passwordStatus"> <span
 				class="glyphicon hidden glyphicon-remove form-control-feedback"
 				aria-hidden="true"></span> <span id="passwordStatus"
-				class="hidden help-block">Bitte gin ein Passwort ein, welches mindestens ein gross und ein klein geschriebener Buchstabe enthält und eine Zahl oder ein Sonderzeichen müssen sich auch in deinem Passwort .</span>
+				class="hidden help-block">Bitte gin ein Passwort ein, welches
+				mindestens ein gross und ein klein geschriebener Buchstabe enthÃ¼lt
+				und eine Zahl oder ein Sonderzeichen mÃ¼ssen sich auch in deinem
+				Passwort .</span>
 		</div>
 		<div class="form-group">
 			<div class="button">
