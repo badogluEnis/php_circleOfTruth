@@ -20,10 +20,12 @@
         <label>
           <input type="checkbox"> Die Frage ist eine Moralfrage*
         </label>
-<div>
-  <button type="submit" class="btn btn-success">Absenden</button>
-</div>
-  <p class ="radio">* Moralfrage bedeutet, dass es keine richtige Antwort gibt. Trotzdem werden beide Antwortm&oumlglichkeiten ben&oumltigt</p>
+
+      <div class ="submit">
+        <button type="submit" class="btn btn-success">Absenden</button>
+      </div>
+
+      <p class ="radio">* Moralfrage bedeutet, dass es keine richtige Antwort gibt. Trotzdem werden beide Antwortm&oumlglichkeiten ben&oumltigt</p>
 
 </div>
 

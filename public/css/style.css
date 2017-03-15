@@ -142,3 +142,7 @@ h3 {
 .abstand {
 	margin-bottom: 25px;
 }
+
+.submit button {
+	margin-top: 20px;
+}
