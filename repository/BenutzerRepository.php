@@ -1,10 +1,9 @@
-
 <?php
 
 require_once '../lib/Repository.php';
 
 
-class FrageRepository extends repository{
+class BenutzerRepository extends repository{
 
       protected $tableName = 'benutzer';
 
@@ -15,7 +14,7 @@ class FrageRepository extends repository{
 
             $password = sha1($password);
 
-            $query = "INSERT INTO $this->tableName (benutzername, antwort_id, zeit) VALUES (?, ?, ?)";
+            $query = "INSERT INTO $this->tableName (benutzername, passwort, ist_admin) VALUES (?, ?, ?)";
 
             $statement = ConnectionHandler::getConnection()->prepare($query);
             $statement->bind_param('ssi', $benutzername, $passwort, $ist_admin);
