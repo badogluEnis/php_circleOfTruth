@@ -130,6 +130,15 @@ h3 {
 	padding: 0 180px 0 180px;
 }
 
-#frage {
-	margin-bottom: 30px;
+.radio {
+	margin-top: 80px;
+}
+
+
+.checkbox label {
+	margin: 50px 0 10px 0;
+}
+
+.abstand {
+	margin-bottom: 25px;
 }

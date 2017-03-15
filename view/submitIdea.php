@@ -1,16 +1,30 @@
 <h3>Sende uns hier deine Ideen für neue Fragen zu!</h3><br>
 <form id"sende">
 
-<textarea name ="frage" id ="frage" rows="5" cols="30" placeholder="Frage" style="resize:none" required></textarea><br><br>
+<div class="formular">
 
-<textarea name ="antwkorr" id="antwkorr" rows="1" cols="25" placeholder="Korrekte Antwort" style="resize:none" required></textarea>
+  <div class="col-xs-12">
+    <textarea class="form-control" name ="frage" id ="frage" rows="5" cols="30" placeholder="Frage" style="resize:none" required></textarea><br><br>
+  </div>
 
-<textarea name ="antwfals" id ="antwfals" rows="1" cols="25" placeholder="Falsche Antowrt" style="resize:none" required></textarea><br><br>
+  <div class="col-xs-6 abstand">
+     <label for="exampleInputEmail1"></label>
+     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Korrekte Antwort">
+   </div>
 
-<label><input type="checkbox" id ="moral"> Die Frage ist eine Moralfrage*</label><br><br>
+   <div class="col-xs-6 abstand">
+      <label for="exampleInputEmail1"></label>
+      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Falsche Antwort">
+    </div>
 
-<p>* Moralfrage bedeutet, dass es keine richtige Antwort gibt. Trotzdem werden beide Antwortm&oumlglichkeiten ben&oumltigt</p> <br>
+        <label>
+          <input type="checkbox"> Die Frage ist eine Moralfrage*
+        </label>
+<div>
+  <button type="submit" class="btn btn-success">Absenden</button>
+</div>
+  <p class ="radio">* Moralfrage bedeutet, dass es keine richtige Antwort gibt. Trotzdem werden beide Antwortm&oumlglichkeiten ben&oumltigt</p>
 
-<button type="submit" class="btn btn-success">Absenden</button>
+</div>
 
 </form>
