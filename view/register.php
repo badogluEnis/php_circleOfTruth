@@ -20,7 +20,6 @@
 			<input name="password"
 				style="margin-top: 25px;"			
 				data-custom-message="true"
-				pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
 				required="required"
 				placeholder="Passwort"
 				type="password"

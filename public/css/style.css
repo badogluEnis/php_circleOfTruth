@@ -146,3 +146,7 @@ h3 {
 .submit button {
 	margin-top: 20px;
 }
+
+.validation-success {
+	border-color: lime;
+}
