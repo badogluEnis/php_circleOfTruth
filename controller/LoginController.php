@@ -50,7 +50,7 @@ class LoginController
 
 	if ($Login->isValidLogin( $_POST ["name"], $_POST ["password"])) {
 
-		$view = new View('startseite');
+		$view = new View('default');
 		$view->heading = '';
 		$view->display();
 

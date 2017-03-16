@@ -81,9 +81,16 @@ class RegisterController
 		$view->display();
 	}
 } else {
+
+	$view = new View('register');
+	$view->heading = 'Registrieren';
+	$view->display();
 	?>
+
 	<script>
-  	alert('Die beiden Passwörter stimmen nicht überein!');
+
+		alert('Die beiden Passwörter stimmen nicht überein!');
+
 	</script>
 <?php
 }

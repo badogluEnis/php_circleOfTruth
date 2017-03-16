@@ -2,7 +2,7 @@
 
 
 
-	<form action="/login/insert" class="register">
+	<form action="/login/insert" method="POST" class="register">
 		<div class="form-group">
 			<input type="text" name="name" placeholder="Benutzername" class="form-control">
 		</div>
