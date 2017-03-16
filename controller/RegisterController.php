@@ -1,6 +1,7 @@
 <?php
 
 require_once '../lib/ConnectionHandler.php';
+require_once '../repository/BenutzerRepository.php';
 
 /**
  * Der Controller ist der Ort an dem es für jede Seite, welche der Benutzer
@@ -43,35 +44,34 @@ class RegisterController
 		$view->display();
 	}
 
-	function isValidAlpha($input) {
+	private function isValidAlpha($input) {
 		if (isset ( $input ) && ! empty ( $input )) {
 			return true;
 		}
 			return false;
-		}
+	}
 
 
 	public function create() {
 
 
 	$passwordPattern = '/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/i';
-	Console.log("Hallo");
-		if (isset ( $_POST ["register"] ) && isValidAlpha ( $_POST ["username"] ) && isValidAlpha ( $_POST["password"]) && preg_match ($passwordPattern, $_POST ["password"])) {
+		if (isset ( $_POST ["register"] ) && $this->isValidAlpha ( $_POST ["username"] ) && $this->isValidAlpha ( $_POST["password"]) && preg_match ($passwordPattern, $_POST ["password"])) {
 
 
 			$connection = new BenutzerRepository();
 
-			$connection->create($_POST ["username"], $_POST ["password"], $_POST ["ist_admin"]);
+			$connection->create($_POST ["username"], $_POST ["password"], false);
 
 
 
-		$view = new View('/Default');
+		$view = new View('hauptseite');
 		$view->heading = '';
 		$view->display();
+	} else {
+		echo "Hallo";
 	}
 
 
-}
-
-
+	}
 }
