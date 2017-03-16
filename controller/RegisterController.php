@@ -52,10 +52,21 @@ class RegisterController
 	}
 
 
+	private function checkPw($input1, $input2) {
+		if ($input1 == $input2) {
+			return true;
+		}
+		return false;
+	}
+
+
+
 	public function create() {
 
 
 	$passwordPattern = '/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/i';
+
+	if ($this->checkPw($_POST ["password"], $_POST ["repassword"])) {
 		if (isset ( $_POST ["register"] ) && $this->isValidAlpha ( $_POST ["username"] ) && $this->isValidAlpha ( $_POST["password"]) && preg_match ($passwordPattern, $_POST ["password"])) {
 
 
@@ -65,12 +76,15 @@ class RegisterController
 
 
 
-		$view = new View('hauptseite');
+		$view = new View('startseite');
 		$view->heading = '';
 		$view->display();
-	} else {
-		echo "Hallo";
 	}
+}else {
+	<script>
+  	alert('Die Beiden Passwörter stimmen nicht überein!');
+	</script>
+}
 
 
 	}
