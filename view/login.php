@@ -2,16 +2,16 @@
 
 
 
-	<form action="" class="register">
+	<form action="/login/insert" class="register">
 		<div class="form-group">
-			<input type="text" placeholder="Benutzername" class="form-control">
+			<input type="text" name="name" placeholder="Benutzername" class="form-control">
 		</div>
 		<div class="form-group">
-			<input type="password" placeholder="Passwort" class="form-control">
+			<input type="password" name="password" placeholder="Passwort" class="form-control">
 		</div>
 		<div class="form-group">
 			<div class="button">
-				<button type="button" class="btn btn-lg btn-success">Anmelden</button>
+				<button type="submit" name="login" class="btn btn-lg btn-success">Anmelden</button>
 			</div>
 		</div>
 	</form>

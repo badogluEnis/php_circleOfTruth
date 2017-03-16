@@ -80,10 +80,12 @@ class RegisterController
 		$view->heading = '';
 		$view->display();
 	}
-}else {
+} else {
+	?>
 	<script>
-  	alert('Die Beiden Passwörter stimmen nicht überein!');
+  	alert('Die beiden Passwörter stimmen nicht überein!');
 	</script>
+<?php
 }
 
 

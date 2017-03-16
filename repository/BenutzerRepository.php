@@ -25,6 +25,36 @@ class BenutzerRepository extends repository{
             return $statement->insert_id;
         }
 
+
+    public function isValidLogin($benutzername, $password) {
+
+        $password = sha1($password);
+
+        $query = "SELECT benutzername, passwort FROM $this->tableName WHERE benutzername =? AND passwort =?";
+
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+        $statement->bind_param('ss', $benutzername, $password);
+
+        if (!$statement->execute()) {
+            throw new Exception($statement->error);
+        }
+
+        $result = $statement->get_result();
+
+        if (!$result) {
+          throw new Exception($statement->error);
+        } else {
+          return true;
+        }
+
+
+      }
+
+
+      public function ist_admin($benutzername, $password, $ist_admin) {
+
+      }
+
 }
 
 

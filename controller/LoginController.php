@@ -1,5 +1,8 @@
 <?php
 
+require_once '../lib/ConnectionHandler.php';
+require_once '../repository/BenutzerRepository.php';
+
 /**
  * Der Controller ist der Ort an dem es für jede Seite, welche der Benutzer
 * anfordern kann eine Methode gibt, welche die dazugehörende Businesslogik
@@ -40,4 +43,20 @@ class LoginController
 		$view->heading = 'Anmelden';
 		$view->display();
 	}
+
+	function insert() {
+
+	$Login = new BenutzerRepository();
+
+	if ($Login->isValidLogin( $_POST ["name"], $_POST ["password"])) {
+
+		$view = new View('startseite');
+		$view->heading = '';
+		$view->display();
+
+	} else {
+			return false;
+		}
+	}
+
 }
