@@ -54,12 +54,10 @@ $passwordPattern = '/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-
 		}
 			return false;
 		}
-
+	}
 		if (isset ( $_POST ["submit"] ) && isValidAlpha ( $_POST ["frage"] ) && isValidAlpha ( $_POST ["antw1"] ) && isValidAlpha ( $_POST ["antw2"] )) {
 
 		$view = new View('submitIdea');
 		$view->heading = 'Idee einsenden';
 		$view->display();
-
 	}
-}
