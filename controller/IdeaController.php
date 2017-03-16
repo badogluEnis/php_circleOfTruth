@@ -43,9 +43,6 @@ class IdeaController
 
 	public function create() {
 
-$passwordPattern = '/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/i';
-
-
 	}
 
 	function isValidAlpha($input) {

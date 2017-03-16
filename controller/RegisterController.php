@@ -1,5 +1,7 @@
 <?php
 
+require_once '../lib/ConnectionHandler.php';
+
 /**
  * Der Controller ist der Ort an dem es für jede Seite, welche der Benutzer
 * anfordern kann eine Methode gibt, welche die dazugehörende Businesslogik
@@ -40,4 +42,36 @@ class RegisterController
 		$view->heading = 'Registrieren';
 		$view->display();
 	}
+
+	function isValidAlpha($input) {
+		if (isset ( $input ) && ! empty ( $input )) {
+			return true;
+		}
+			return false;
+		}
+
+
+	public function create() {
+
+
+	$passwordPattern = '/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/i';
+	Console.log("Hallo");
+		if (isset ( $_POST ["register"] ) && isValidAlpha ( $_POST ["username"] ) && isValidAlpha ( $_POST["password"]) && preg_match ($passwordPattern, $_POST ["password"])) {
+
+
+			$connection = new BenutzerRepository();
+
+			$connection->create($_POST ["username"], $_POST ["password"], $_POST ["ist_admin"]);
+
+
+
+		$view = new View('/Default');
+		$view->heading = '';
+		$view->display();
+	}
+
+
+}
+
+
 }

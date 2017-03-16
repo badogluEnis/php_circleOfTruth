@@ -12,6 +12,7 @@ class BenutzerRepository extends repository{
       public function create($benutzername, $passwort, $ist_admin)
         {
 
+            $ist_admin = false;
             $password = sha1($password);
 
             $query = "INSERT INTO $this->tableName (benutzername, passwort, ist_admin) VALUES (?, ?, ?)";
