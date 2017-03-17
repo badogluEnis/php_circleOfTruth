@@ -1,5 +1,7 @@
 <?php
 
+require_once '../repository/BenutzerRepository.php';
+
 /**
  * Der Controller ist der Ort an dem es für jede Seite, welche der Benutzer
  * anfordern kann eine Methode gibt, welche die dazugehörende Businesslogik
@@ -35,17 +37,23 @@ class DefaultController {
 		// In diesem Fall möchten wir dem Benutzer die View mit dem Namen
 		// "default_index" rendern. Wie das genau funktioniert, ist in der
 		// View Klasse beschrieben.
-		$eingeloggt = false;
-		if ($eingeloggt) {
+		$benutzer = new BenutzerRepository();
+if ($benutzer->isLoggedIn()) {
+		if ($_SESSION ['loggedin'] = true) {
 			$view = new View ( 'hauptseite' );
 			$view->heading = ' ';
 			$view->display ();
-		} 
+		}
 
 		else {
 			$view = new View ( 'startseite' );
 			$view->heading = 'Circle of truth';
 			$view->display ();
 		}
+	}	else {
+			$view = new View ( 'startseite' );
+			$view->heading = 'Circle of truth';
+			$view->display ();
+	}
 	}
 }

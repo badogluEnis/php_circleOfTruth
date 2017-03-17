@@ -41,6 +41,12 @@ class BenutzerRepository extends repository{
 
         $result = $statement->get_result();
 
+        if ($result->num_rows == 1) {
+          $row = $result->fetch_object();
+          $_SESSION ['user'] ['name'] = $row->username;
+          $_SESSION ['loggedin'] = true;
+        }
+
         if (!$result) {
           throw new Exception($statement->error);
         } else {
@@ -48,6 +54,14 @@ class BenutzerRepository extends repository{
         }
 
 
+      }
+
+
+      public function isLoggedIn() {
+        if ($_SESSION ['loggedin'] = true) {
+          return true;
+        }
+        return false;
       }
 
 

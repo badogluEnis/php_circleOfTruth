@@ -50,6 +50,12 @@ class LoginController
 
 	if ($Login->isValidLogin( $_POST ["name"], $_POST ["password"])) {
 
+		session_start();
+
+		if (!isset($_POST['username']) || !isset($_POST['password'])) {
+			die("permission denied");
+		}
+
 		$view = new View('default');
 		$view->heading = '';
 		$view->display();
