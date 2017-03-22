@@ -54,6 +54,10 @@ class LoginController
 		$view->display();
 
 	} else {
+
+		$view = new View('login');
+		$view->heading = '';
+		$view->display();
 ?>
 			<script>
 				alert('Login fehlgeschlagen');

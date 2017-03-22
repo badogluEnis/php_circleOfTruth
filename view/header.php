@@ -11,6 +11,7 @@
 -->
 <?php
 require_once '../repository/BenutzerRepository.php';
+require_once '../lib/ConnectionHandler.php';
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +60,14 @@ require_once '../repository/BenutzerRepository.php';
 							<li><a href="/Answered">Kürzlich beantwortet</a></li>
 							<li><a href="/idea">Idee einsenden</a></li>
 							<li><a href="/About">Über uns</a></li>
-							<li><a>Eingeloggt als: <?php $_SESSION ['user']['name']; ?></a></li>
+							<?php
+							if ($_POST ['name'] != null && $_POST ['password'] != null) {
+								if ($benutzer->isAdmin( $_POST ["name"], $_POST ["password"])) {
+									?>
+								<li><a href="/About">Adminpanel</a></li>
+								<?php
+							}} ?>
+							<li><a href="/Logout">Eingeloggt als: <?php echo $_SESSION ['user']['name']; ?></a></li>
 							<?php } ?>
 						</ul>
 					</div>

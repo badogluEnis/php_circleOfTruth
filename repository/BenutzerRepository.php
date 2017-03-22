@@ -1,6 +1,7 @@
 <?php
 
 require_once '../lib/Repository.php';
+require_once '../lib/ConnectionHandler.php';
 
 
 class BenutzerRepository extends repository{
@@ -67,7 +68,34 @@ class BenutzerRepository extends repository{
         }
 
 
-      public function ist_admin($benutzername, $password, $ist_admin) {
+      public function isAdmin($benutzername, $password) {
+
+        $password = sha1($password);
+
+          $query = "SELECT benutzername, passwort, ist_admin FROM $this->tableName WHERE benutzername =? AND passwort =?";
+
+          $statement = ConnectionHandler::getConnection()->prepare($query);
+          $statement->bind_param('ss', $benutzername, $password);
+
+          if (!$statement->execute()) {
+              throw new Exception($statement->error);
+          }
+
+          $result = $statement->get_result();
+
+          if (!$result) {
+            throw new Exception($statement->error);
+          }
+
+          if ($result->num_rows == 1) {
+            $row = $result->fetch_object();
+            $_SESSION ['admin'] = $row->ist_admin;
+
+            if ($_SESSION ['admin']) {
+                          return true;
+            }
+              return false;
+          }
 
       }
 
