@@ -1,36 +1,36 @@
 var passwordpattern = /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/g;
 
 $(document).ready(function () {
-	$('#password').change(function () {
-		$(this).removeClass('has-success');
-		$(this).removeClass('has-error');
-		$(this).removeClass('has-feedback');
+	$('#password').keyup(function () {
+		$(this).parent().removeClass('has-success');
+		$(this).parent().removeClass('has-error');
+		$(this).parent().removeClass('has-feedback');
 
 		
 		if ($(this).val().match(passwordpattern)) {
-			$(this).parent.addClass('has-success');
-			$(this).parent.addClass('has-feedback');
+			$(this).parent().addClass('has-success');
+			$(this).parent().addClass('has-feedback');
 
 		
 		} else {
-			$(this).parent.addClass('has-error');
-			$(this).parent.addClass('has-feedback');
+			$(this).parent().addClass('has-error');
+			$(this).parent().addClass('has-feedback');
 
 		}
 	});
 	
-	$('#repassword').change(function () {
-		$(this).parent.removeClass('validation-success');
-		$(this).parent.removeClass('validation-error');
+	$('#repassword').keyup(function () {
+		$(this).parent().removeClass('has-success');
+		$(this).parent().removeClass('has-error');
 		
-		if ($(this).val().match('#repassword')) {
-			$(this).parent.addClass('validation-success');
-			$(this).parent.addClass('has-feedback');
+		if ($(this).val() == $('#password').val()) {
+			console.log('A');
+			$(this).parent().addClass('has-success');
 
 		
 		} else {
-			$(this).parent.addClass('validation-error');
-			$(this).parent.addClass('has-feedback');
+			console.log('B');
+			$(this).parent().addClass('has-error');
 
 		}
 	});
