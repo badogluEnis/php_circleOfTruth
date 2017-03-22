@@ -9,9 +9,11 @@
 			type="text"
 			class="form-control"
 			id="username"
-			aria-describedby="usernameStatus"> <span
+			aria-describedby="usernameStatus"> 
+			<span
 			class="hidden glyphicon glyphicon-remove form-control-feedback"
-			aria-hidden="true"></span> <span
+			aria-hidden="true"></span> 
+			<span
 			id="usernameStatus"
 			class="help-block hidden">Bitte gib deinen Benutzernamen ein.</span>
 		</div>
@@ -27,8 +29,8 @@
 				id="password"
 				aria-describedby="passwordStatus">
 				<span
-				class="glyphicon hidden glyphicon-remove form-control-feedback"
-				aria-hidden="true">
+				class="hidden glyphicon glyphicon-remove form-control-feedback"
+				aria-hidden="false">
 				</span>
 				<span id="passwordStatus"
 				class="hidden help-block">Bitte gib ein Passwort ein, welches
@@ -49,8 +51,8 @@
 				id="repassword"
 				aria-describedby="passwordStatus">
 				<span
-				class="glyphicon hidden glyphicon-remove form-control-feedback"
-				aria-hidden="true">
+				class="hidden glyphicon glyphicon-remove form-control-feedback"
+				aria-hidden="false">
 				</span>
 				<span id="passwordStatus"
 				class="hidden help-block">Passwörter stimmen nicht überein

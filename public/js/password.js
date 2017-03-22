@@ -16,6 +16,8 @@ $(document).ready(function () {
 			$(this).parent().addClass('has-error');
 			$(this).parent().addClass('has-feedback');
 
+
+
 		}
 	});
 	
@@ -23,14 +25,15 @@ $(document).ready(function () {
 		$(this).parent().removeClass('has-success');
 		$(this).parent().removeClass('has-error');
 		
+		
 		if ($(this).val() == $('#password').val()) {
-			console.log('A');
 			$(this).parent().addClass('has-success');
+
 
 		
 		} else {
-			console.log('B');
 			$(this).parent().addClass('has-error');
+
 
 		}
 	});
