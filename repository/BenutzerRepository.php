@@ -58,11 +58,13 @@ class BenutzerRepository extends repository{
 
 
       public function isLoggedIn() {
-        if ($_SESSION ['loggedin'] = true) {
-          return true;
+        if (isset ($_SESSION ['loggedin'])) {
+          if ($_SESSION ['loggedin'] = true) {
+            return true;
+          }
+            return false;
+          }
         }
-        return false;
-      }
 
 
       public function ist_admin($benutzername, $password, $ist_admin) {

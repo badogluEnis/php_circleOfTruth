@@ -39,7 +39,6 @@ class DefaultController {
 		// View Klasse beschrieben.
 		$benutzer = new BenutzerRepository();
 if ($benutzer->isLoggedIn()) {
-		if ($_SESSION ['loggedin'] = true) {
 			$view = new View ( 'hauptseite' );
 			$view->heading = ' ';
 			$view->display ();
@@ -50,10 +49,5 @@ if ($benutzer->isLoggedIn()) {
 			$view->heading = 'Circle of truth';
 			$view->display ();
 		}
-	}	else {
-			$view = new View ( 'startseite' );
-			$view->heading = 'Circle of truth';
-			$view->display ();
-	}
 	}
 }
