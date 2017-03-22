@@ -71,7 +71,6 @@ class RegisterController
 
 
 			$connection = new BenutzerRepository();
-
 			$connection->create($_POST ["username"], $_POST ["password"], false);
 
 

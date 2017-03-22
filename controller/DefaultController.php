@@ -38,13 +38,11 @@ class DefaultController {
 		// "default_index" rendern. Wie das genau funktioniert, ist in der
 		// View Klasse beschrieben.
 		$benutzer = new BenutzerRepository();
-if ($benutzer->isLoggedIn()) {
-			$view = new View ( 'hauptseite' );
-			$view->heading = ' ';
-			$view->display ();
-		}
-
-		else {
+		if ($benutzer->isLoggedIn()) {
+					$view = new View ( 'hauptseite' );
+					$view->heading = ' ';
+					$view->display ();
+		}	else {
 			$view = new View ( 'startseite' );
 			$view->heading = 'Circle of truth';
 			$view->display ();

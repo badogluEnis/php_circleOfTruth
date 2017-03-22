@@ -4,10 +4,10 @@
 
 	<form action="/login/insert" method="POST" class="register">
 		<div class="form-group">
-			<input type="text" name="name" placeholder="Benutzername" class="form-control">
+			<input type="text" required="required" name="name" placeholder="Benutzername" class="form-control">
 		</div>
 		<div class="form-group">
-			<input type="password" name="password" placeholder="Passwort" class="form-control">
+			<input type="password" required="required" name="password" placeholder="Passwort" class="form-control">
 		</div>
 		<div class="form-group">
 			<div class="button">

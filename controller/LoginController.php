@@ -47,20 +47,18 @@ class LoginController
 	function insert() {
 
 	$Login = new BenutzerRepository();
-
 	if ($Login->isValidLogin( $_POST ["name"], $_POST ["password"])) {
 
-		session_start();
-
-		if (!isset($_POST['username']) || !isset($_POST['password'])) {
-			die("permission denied");
-		}
-
-		$view = new View('default');
+		$view = new View('hauptseite');
 		$view->heading = '';
 		$view->display();
 
 	} else {
+?>
+			<script>
+				alert('Login fehlgeschlagen');
+			</script>
+			<?php
 			return false;
 		}
 	}
