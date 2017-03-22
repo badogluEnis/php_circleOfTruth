@@ -16,7 +16,7 @@
 			class="help-block hidden">Bitte gib deinen Benutzernamen ein.</span>
 		</div>
 
-		<div class="register">
+		<div class="register form-group">
 			<input name="password"
 				style="margin-top: 25px;"			
 				data-custom-message="true"
