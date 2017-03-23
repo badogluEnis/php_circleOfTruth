@@ -44,26 +44,26 @@ class LoginController
 		$view->display();
 	}
 
-	function insert() {
+	function doLogin() {
 
-	$Login = new BenutzerRepository();
-	if ($Login->isValidLogin( $_POST ["name"], $_POST ["password"])) {
+		$benutzerRepository = new BenutzerRepository();
+		$benutzer = $benutzerRepository->getBenutzerByUsernameAndPassword($_POST['name'], $_POST['password']);
 
-		$view = new View('hauptseite');
-		$view->heading = '';
-		$view->display();
+		if($benutzer !== null) {
+			// Login erfolgreich
 
-	} else {
+			$_SESSION['user'] = [
+				'id' => $benutzer->id,
+				'name' => $benutzer->benutzername,
+				'admin' => $benutzer->ist_admin,
+			];
 
-		$view = new View('login');
-		$view->heading = '';
-		$view->display();
-?>
-			<script>
-				alert('Login fehlgeschlagen');
-			</script>
-			<?php
-			return false;
+			header('Location: /');
+			return;
+
+		} else {
+			header('Location: /login');
+			return;
 		}
 	}
 

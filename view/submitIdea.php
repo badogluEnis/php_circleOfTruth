@@ -2,7 +2,7 @@
 <br>
 
 
-<form action="/idea/create" class="senden">
+<form action="/idea/create" method="POST" class="senden">
 
 	<div class="formular">
 
@@ -23,8 +23,8 @@
 				aria-hidden="true"></span> <span id="antw1Status"
 				class="help-block hidden">Wie lautet die richtige Antwort?</span>
 		</div>
-		
-		
+
+
 		<div class="form-group col-xs-6 abstand">
 			<label class="control-label sr-only" for="lastname">Falsche Antwortmöglichkeit</label>
 			<input name="antw2" data-custom-message="true" required="required"
@@ -43,7 +43,7 @@
 		</div>
 
 		<p class="radio">* Moralfrage bedeutet, dass es keine richtige Antwort
-			gibt. Trotzdem werden beide Antwortm&oumlglichkeiten ben&oumltigt</p>
+			gibt. Trotzdem werden beide Antwortmöglichkeiten benötigt</p>
 
 	</div>
 

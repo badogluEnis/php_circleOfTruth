@@ -1,5 +1,7 @@
 <?php
 
+require_once '../repository/FrageRepository.php';
+
 /**
  * Der Controller ist der Ort an dem es für jede Seite, welche der Benutzer
 * anfordern kann eine Methode gibt, welche die dazugehörende Businesslogik
@@ -41,17 +43,23 @@ class IdeaController
 		$view->display();
 	}
 
-	function isValidAlpha($input) {
+	private function isValidAlpha($input) {
 		if (isset ( $input ) && ! empty ( $input )) {
 			return true;
 		}
 			return false;
 		}
-	}
-		if (isset ( $_POST ["submit"] ) && isValidAlpha ( $_POST ["frage"] ) && isValidAlpha ( $_POST ["antw1"] ) && isValidAlpha ( $_POST ["antw2"] )) {
+
+	public function create() {
+		if (isset ( $_POST ["submit"] ) && $this->isValidAlpha ( $_POST ["frage"] ) && $this->isValidAlpha ( $_POST ["antw1"] ) && $this->isValidAlpha ( $_POST ["antw2"] )) {
 
 			$frage = new FrageRepository();
-			$frage->create($_POST ['frage'], $_POST ['moral'], false, $_SESSION ['id']);
-			
-			header("Location: /Idea");
+			$frage->create($_POST ['frage'], $_POST ['moral'], false, $_SESSION ['id'], $_POST ['antw1'], $_POST ['antw2']);
+
+			$view = new View('submitIdea');
+			$view->heading = 'Idee einsenden';
+			$view->display();
+
 	}
+}
+}

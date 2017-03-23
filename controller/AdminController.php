@@ -33,6 +33,19 @@ class AdminController
 	 */
 	public function index()
 	{
+		if(!isset($_SESSION['user'])) {
+			echo "<b>Error:</b> 401 Unauthorized";
+			header("HTTP/1.1 401 Unauthorized");
+	    exit;
+		}
+
+		if(!$_SESSION['user']['admin']) {
+			echo "<b>Error:</b> 403 Forbidden";
+			header('HTTP/1.0 403 Forbidden');
+			exit;
+		}
+
+
 		// In diesem Fall möchten wir dem Benutzer die View mit dem Namen
 		//   "default_index" rendern. Wie das genau funktioniert, ist in der
 		//   View Klasse beschrieben.

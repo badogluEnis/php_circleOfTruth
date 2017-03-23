@@ -53,21 +53,19 @@ require_once '../lib/ConnectionHandler.php';
 					<div id="navbar" class="collapse navbar-collapse">
 						<ul class="nav navbar-nav">
 						<?php
-						$benutzer = new BenutzerRepository();
-						if ($benutzer->isLoggedIn()) {
+						if (isset($_SESSION['user'])) {
 							?>
 							<li><a href="/Default">Home</a></li>
 							<li><a href="/Answered">Kürzlich beantwortet</a></li>
 							<li><a href="/idea">Idee einsenden</a></li>
 							<li><a href="/About">Über uns</a></li>
 							<?php
-							if ($_POST ['name'] != null && $_POST ['password'] != null) {
-								if ($benutzer->isAdmin( $_POST ["name"], $_POST ["password"])) {
+								if ($_SESSION ['user']['admin']) {
 									?>
-								<li><a href="/About">Adminpanel</a></li>
-								<?php
-							}} ?>
-							<li><a href="/Logout">Eingeloggt als: <?php echo $_SESSION ['user']['name']; ?></a></li>
+									<li><a href="/Admin">Adminpanel</a></li>
+									<?php
+								}?>
+								<li><a href="/Logout">Eingeloggt als: <?php echo $_SESSION ['user']['name']; ?></a></li>
 							<?php } ?>
 						</ul>
 					</div>
