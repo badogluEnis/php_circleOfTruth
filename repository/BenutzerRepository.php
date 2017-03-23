@@ -72,7 +72,7 @@ class BenutzerRepository extends repository{
 
         $password = sha1($password);
 
-          $query = "SELECT benutzername, passwort, ist_admin FROM $this->tableName WHERE benutzername =? AND passwort =?";
+          $query = "SELECT benutzername, passwort, ist_admin id FROM $this->tableName WHERE benutzername =? AND passwort =?";
 
           $statement = ConnectionHandler::getConnection()->prepare($query);
           $statement->bind_param('ss', $benutzername, $password);
@@ -90,6 +90,7 @@ class BenutzerRepository extends repository{
           if ($result->num_rows == 1) {
             $row = $result->fetch_object();
             $_SESSION ['admin'] = $row->ist_admin;
+            $_SESSION ['id'] = $row->id;
 
             if ($_SESSION ['admin']) {
                           return true;

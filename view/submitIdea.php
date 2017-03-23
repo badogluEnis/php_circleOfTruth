@@ -35,7 +35,7 @@
 				class="help-block hidden">Wie lautet die falsche Antwort?</span>
 		</div>
 
-		<label> <input type="checkbox"> Die Frage ist eine Moralfrage*
+		<label> <input name="moral" type="checkbox"> Die Frage ist eine Moralfrage*
 		</label>
 
 		<div class="submit">

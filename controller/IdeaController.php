@@ -41,10 +41,6 @@ class IdeaController
 		$view->display();
 	}
 
-	public function create() {
-			
-	}
-
 	function isValidAlpha($input) {
 		if (isset ( $input ) && ! empty ( $input )) {
 			return true;
@@ -54,7 +50,8 @@ class IdeaController
 	}
 		if (isset ( $_POST ["submit"] ) && isValidAlpha ( $_POST ["frage"] ) && isValidAlpha ( $_POST ["antw1"] ) && isValidAlpha ( $_POST ["antw2"] )) {
 
-		$view = new View('submitIdea');
-		$view->heading = 'Idee einsenden';
-		$view->display();
+			$frage = new FrageRepository();
+			$frage->create($_POST ['frage'], $_POST ['moral'], false, $_SESSION ['id']);
+			
+			header("Location: /Idea");
 	}
