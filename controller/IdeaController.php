@@ -1,6 +1,7 @@
 <?php
 
 require_once '../repository/FrageRepository.php';
+require_once '../lib/ConnectionHandler.php';
 
 /**
  * Der Controller ist der Ort an dem es für jede Seite, welche der Benutzer
@@ -51,15 +52,13 @@ class IdeaController
 		}
 
 	public function create() {
-		if (isset ( $_POST ["submit"] ) && $this->isValidAlpha ( $_POST ["frage"] ) && $this->isValidAlpha ( $_POST ["antw1"] ) && $this->isValidAlpha ( $_POST ["antw2"] )) {
+
 
 			$frage = new FrageRepository();
-			$frage->create($_POST ['frage'], $_POST ['moral'], false, $_SESSION ['id'], $_POST ['antw1'], $_POST ['antw2']);
+			$frage->create($_POST ['frage'], !empty($_POST ['moral']), false, $_SESSION ['user']['id'], $_POST ['antw1'], $_POST ['antw2']);
 
 			$view = new View('submitIdea');
 			$view->heading = 'Idee einsenden';
 			$view->display();
-
-	}
-}
+		}
 }

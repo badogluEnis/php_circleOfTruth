@@ -30,52 +30,46 @@ require_once '../lib/ConnectionHandler.php';
 
 
 </head>
-<body>
-
-	<div class="container bbc-container">
-		<nav class="navbar navbar-bbc">
-			<div class="row bbc-vertical-align">
-				<div class="col-xs-2">
-					<a class="logo" href="/Default" link><img rel="icon" class="logo" alt="Logo"
-						src="/img/logo.png"></a>
-				</div>
-				<div class="col-xs-10">
-					<div class="navbar-header">
-						<button class="navbar-toggle" type="button" data-toggle="collapse"
-							data-target="#navbar" aria-expanded="true" aria-controls="navbar">
-							<span class="sr-only">Toggle navigation</span><span
-								class="icon-bar"></span> <span class="icon-bar"></span> <span
-								class="icon-bar"></span>
-						</button>
-
+	<body>
+		<div class="container bbc-container">
+			<nav class="navbar navbar-bbc">
+				<div class="row bbc-vertical-align">
+					<div class="col-xs-2">
+						<a class="logo" href="/Default" link><img rel="icon" class="logo" alt="Logo"
+							src="/img/logo.png"></a>
 					</div>
-
-					<div id="navbar" class="collapse navbar-collapse">
-						<ul class="nav navbar-nav">
-						<?php
-						if (isset($_SESSION['user'])) {
-							?>
-							<li><a href="/Default">Home</a></li>
-							<li><a href="/Answered">Kürzlich beantwortet</a></li>
-							<li><a href="/idea">Idee einsenden</a></li>
-							<li><a href="/About">Über uns</a></li>
+					<div class="col-xs-10">
+						<div class="navbar-header">
+							<button class="navbar-toggle" type="button" data-toggle="collapse"
+								data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+								<span class="sr-only">Toggle navigation</span><span
+									class="icon-bar"></span> <span class="icon-bar"></span> <span
+									class="icon-bar"></span>
+							</button>
+						</div>
+						<div id="navbar" class="collapse navbar-collapse">
+							<ul class="nav navbar-nav">
 							<?php
-								if ($_SESSION ['user']['admin']) {
-									?>
-									<li><a href="/Admin">Adminpanel</a></li>
-									<?php
-								}?>
-								<li><a href="/Logout">Eingeloggt als: <?php echo $_SESSION ['user']['name']; ?></a></li>
-							<?php } ?>
-						</ul>
+							if (isset($_SESSION['user'])) {
+								?>
+								<li><a href="/Default">Home</a></li>
+								<li><a href="/Answered">Kürzlich beantwortet</a></li>
+								<li><a href="/idea">Idee einsenden</a></li>
+								<li><a href="/About">Über uns</a></li>
+								<?php
+									if ($_SESSION ['user']['admin']) {
+										?>
+										<li><a href="/Admin">Adminpanel</a></li>
+										<?php
+									}?>
+									<li><a href="/Logout">Eingeloggt als: <?php echo $_SESSION ['user']['name']; ?></a></li>
+								<?php } ?>
+							</ul>
+						</div>
+
 					</div>
-
 				</div>
-			</div>
-		</nav>
-
-		<div class="container">
-
-<h1><?= $heading ?></h1>
-
-<div class="inhalt">
+			</nav>
+			<div class="container">
+		<h1><?= $heading ?></h1>
+	<div class="inhalt">

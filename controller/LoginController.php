@@ -62,7 +62,7 @@ class LoginController
 			return;
 
 		} else {
-			header('Location: /login');
+				header('Location: /login');
 			return;
 		}
 	}

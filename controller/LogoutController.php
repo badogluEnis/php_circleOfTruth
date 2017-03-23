@@ -9,10 +9,9 @@ class LogoutController {
   $_Session ['loggedin'] = false;
   session_destroy();
 
-header("Location: /");
+  header("Location: /");
+  $view->heading = 'Circle of truth';
+  }
 }
-
-}
-
 
 ?>

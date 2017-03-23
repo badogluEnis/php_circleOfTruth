@@ -87,9 +87,7 @@ class RegisterController
 ?>
 
 	<script>
-
 		alert('Die beiden Passwörter stimmen nicht überein!');
-
 	</script>
 <?php
 }
