@@ -42,7 +42,7 @@ class IdeaController
 	}
 
 	public function create() {
-
+			
 	}
 
 	function isValidAlpha($input) {

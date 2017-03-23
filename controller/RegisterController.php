@@ -84,7 +84,7 @@ class RegisterController
 	$view = new View('register');
 	$view->heading = 'Registrieren';
 	$view->display();
-	?>
+?>
 
 	<script>
 

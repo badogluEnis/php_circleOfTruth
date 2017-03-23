@@ -28,7 +28,7 @@
 		<div class="form-group col-xs-6 abstand">
 			<label class="control-label sr-only" for="lastname">Falsche Antwortmöglichkeit</label>
 			<input name="antw2" data-custom-message="true" required="required"
-				placeholder="Korrekte Antwortmöglichkeit" type="text" class="form-control input-lg"
+				placeholder="Falsche Antwortmöglichkeit" type="text" class="form-control input-lg"
 				id="antw2" aria-describedby="antw2Status"> <span
 				class="glyphicon glyphicon-remove hidden form-control-feedback"
 				aria-hidden="true"></span> <span id="antw2Status"
