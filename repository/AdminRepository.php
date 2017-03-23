@@ -6,17 +6,16 @@ require_once '../lib/ConnectionHandler.php';
 
 class BenutzerRepository extends repository{
 
-      protected $tableName = 'benutzer';
+      protected $tableName = 'frage';
 
 
-      public function create($benutzername, $password) {
+      public function getFrage() {
 
         $password = sha1($password);
 
-          $query = "SELECT benutzername, passwort, ist_admin id FROM $this->tableName WHERE benutzername =? AND passwort =?";
+          $query = "SELECT text, moralfrage, Freigegeben, antwort, is_korrekt FROM $this->tableName f JOIN antwort a ON a.frage_id = f.id WHERE freigegeben = 0";
 
           $statement = ConnectionHandler::getConnection()->prepare($query);
-          $statement->bind_param('ss', $benutzername, $password);
 
           if (!$statement->execute()) {
               throw new Exception($statement->error);
@@ -28,17 +27,15 @@ class BenutzerRepository extends repository{
             throw new Exception($statement->error);
           }
 
-          if ($result->num_rows == 1) {
-            $row = $result->fetch_object();
-            $_SESSION ['admin'] = $row->ist_admin;
-            $_SESSION ['id'] = $row->id;
 
-            if ($_SESSION ['admin']) {
-              return true;
-            }
-              return false;
+          $row = $result->fetch_object();
+          $_SESSION ['admin'] = $row->ist_admin;
+          $_SESSION ['id'] = $row->id;
+
+          if ($_SESSION ['admin']) {
+            return true;
           }
-
+            return false;
       }
 
 }
