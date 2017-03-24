@@ -1,6 +1,6 @@
 <div class="mittig_home">
 <?php 
-	require_once '../reporsitory/FrageRepository.php';
+	require_once '../repository/FrageRepository.php';
 	
 	if (!empty($fragen)) ?>
 	<p>
