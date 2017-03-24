@@ -4,41 +4,37 @@ require_once '../lib/Repository.php';
 require_once '../lib/ConnectionHandler.php';
 
 
-class BenutzerRepository extends repository{
+class AdminRepository extends repository{
 
-      protected $tableName = 'frage';
+    protected $tableName = 'frage';
 
 
-      public function getFrage() {
+    public function getFrage() {
 
-        $password = sha1($password);
+        $query = "SELECT text, moralfrage, Freigegeben, antwort, is_korrekt FROM $this->tableName f JOIN antwort a ON a.frage_id = f.id WHERE freigegeben = 0";
 
-          $query = "SELECT text, moralfrage, Freigegeben, antwort, is_korrekt FROM $this->tableName f JOIN antwort a ON a.frage_id = f.id WHERE freigegeben = 0";
+        $statement = ConnectionHandler::getConnection()->prepare($query);
 
-          $statement = ConnectionHandler::getConnection()->prepare($query);
-
-          if (!$statement->execute()) {
-              throw new Exception($statement->error);
-          }
-
-          $result = $statement->get_result();
-
-          if (!$result) {
+        if (!$statement->execute()) {
             throw new Exception($statement->error);
-          }
+        }
 
+        $result = $statement->get_result();
 
-          $row = $result->fetch_object();
-          $_SESSION ['admin'] = $row->ist_admin;
-          $_SESSION ['id'] = $row->id;
+        if (!$result) {
+          throw new Exception($statement->error);
+        }
 
-          if ($_SESSION ['admin']) {
-            return true;
-          }
-            return false;
+        $rows[] = array();
+        while($row = $result->fetch_object()) {
+          $rows[] = $row;
       }
 
-}
+        return $rows;
+
+        }
+    }
+
 
 
 

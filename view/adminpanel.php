@@ -1,4 +1,8 @@
+<?php
+require_once '../repository\AdminRepository.php';
 
+
+if (!empty($frage)) { ?>
 <table class="table table-hover mittig_admin">
 	<tr>
 		<th>Frage</th>
@@ -8,11 +12,12 @@
 		<th>Akzeptieren</th>
 		<th>Ablehnen</th>
 	</tr>
- 	<tr>
-		<td>Frage asdfk sdlöfk jds lfjdskl lsljlsjf jsl jal ksa lösdj lsj lkjalk jslfjj fjslöjsödfl kjsdlkj fsl lök</td>
-		<td>Antwort 1</td>
-		<td>Antwort 2</td>
-		<td>Ja / Nein</td>
+<?php foreach ($frage as $fragen): ?>
+	<tr>
+		<td><?= $fragen->text; ?></td>
+		<td><?= $fragen->antwort; ?></td>
+		<td><?= $fragen->antwort; ?></td>
+		<td><?= $fragen->moralfrage; ?></td>
 		<td>
 			<div>
 				<button type="submit" name="login" class="btn btn-sm btn-success">Akzeptieren</button>
@@ -23,4 +28,8 @@
 			</div>
 		</td>
 	</tr>
+<?php endforeach ?>
 </table>
+<?php } else {
+	echo '<h2>Keine Weitere Fragen offen.</h2>';
+}

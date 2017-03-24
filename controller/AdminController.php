@@ -1,5 +1,7 @@
 <?php
 
+require_once '../repository\AdminRepository.php';
+
 /**
  * Der Controller ist der Ort an dem es für jede Seite, welche der Benutzer
 * anfordern kann eine Methode gibt, welche die dazugehörende Businesslogik
@@ -49,7 +51,9 @@ class AdminController
 		// In diesem Fall möchten wir dem Benutzer die View mit dem Namen
 		//   "default_index" rendern. Wie das genau funktioniert, ist in der
 		//   View Klasse beschrieben.
+		$Admin = new AdminRepository();
 		$view = new View('adminpanel');
+		$view->frage = $Admin->getFrage();
 		$view->heading = 'Adminpanel';
 		$view->display();
 	}
