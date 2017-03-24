@@ -1,6 +1,8 @@
 <?php
 
 require_once '../repository/BenutzerRepository.php';
+require_once '../repository/FrageRepository.php';
+
 
 /**
  * Der Controller ist der Ort an dem es für jede Seite, welche der Benutzer
@@ -33,18 +35,51 @@ class DefaultController {
 	 * welcher Controller und welche Methode aufgerufen wird, ist im Dispatcher
 	 * beschrieben.
 	 */
-	public function index() {
+	public function index() 
+	{
+		
+		
 		// In diesem Fall möchten wir dem Benutzer die View mit dem Namen
 		// "default_index" rendern. Wie das genau funktioniert, ist in der
 		// View Klasse beschrieben.
 		if (isset($_SESSION['user'])) {
-					$view = new View ( 'hauptseite' );
-					$view->heading = ' ';
-					$view->display ();
+			
+			
+			$frage = new FrageRepository();
+			
+			$fragen = $frage->getFragen();
+			$antworten = $frage->getAntworten();
+			
+			$zusammensetzung = [];
+			
+			foreach ($fragen as $frage) {
+				$passendeAntworten = [];
+				foreach ($antworten as $antwort) {
+					if($antwort->frage_id === $frage->id) {
+						$passendeAntworten[] = $antwort;
+					}
+				}
+			
+				$zusammensetzung[] = [
+						'frage' => $frage,
+						'antworten' => $passendeAntworten,
+				];
+			
+			}
+			
+			
+				$view = new View ( 'hauptseite' );
+				$view->heading = ' ';
+				$view->display ();
+				
+				
+				
+				
+				
 		}	else {
-			$view = new View ( 'startseite' );
-			$view->heading = 'Circle of truth';
-			$view->display ();
+				$view = new View ( 'startseite' );
+				$view->heading = 'Circle of truth';
+				$view->display ();
 		}
 	}
 }

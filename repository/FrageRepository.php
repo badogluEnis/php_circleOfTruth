@@ -48,6 +48,56 @@ class FrageRepository extends repository{
             }
             $statement3->close();
         }
+      
+      public function getFragen() {
+      		$query = "SELECT * FROM frage WHERE freigegeben = 1";
+      		
+      		$statement = ConnectionHandler::getConnection()->prepare($query);
+      		
+      		if (!$statement->execute()) {
+      			throw new  Exeption($statement->error);
+      		}
+      		
+      		$result = $statement->get_result();
+      		
+      		if (!$result) {
+      			throw new Exception($statement->error);
+      		}
+      		
+      		$fragen = array();
+      		while($frage = $result->fetch_object()) {
+      			$fragen[] = $frage;
+      		}
+      		
+      		$result->close();
+      		
+      		return $fragen;
+      }
+      
+      public function getAntworten() {
+      
+      	$query = "SELECT * FROM antwort WHERE frage_id in (SELECT id FROM frage WHERE freigegeben = 1)";
+      
+      	$statement = ConnectionHandler::getConnection()->prepare($query);
+      
+      	if (!$statement->execute()) {
+      		throw new Exception($statement->error);
+      	}
+      
+      	$result = $statement->get_result();
+      
+      	if (!$result) {
+      		throw new Exception($statement->error);
+      	}
+      
+      	$rows = array();
+      	while($row = $result->fetch_object()) {
+      		$rows[] = $row;
+      	}
+      
+      	return $rows;
+      }
+		
 
 }
 
