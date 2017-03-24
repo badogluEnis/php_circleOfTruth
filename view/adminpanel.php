@@ -23,13 +23,11 @@ if (!empty($fragen)) { ?>
 				<div>
 					<a class="btn btn-sm btn-success" href="/admin/accept?id=<?= $frage['frage']->id ?>">Akzeptieren</a>
 				</div></td>
-			<form action ="/admin/denie" method="POST">
 				<td>
 					<div>
 						<a class="btn btn-sm btn-danger" href="/admin/denie?id=<?= $frage['frage']->id ?>">Ablehnen</a>
 					</div>
 				</td>
-			</form>
 	</tr>
 <?php endforeach ?>
 </table>
