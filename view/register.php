@@ -32,7 +32,7 @@
 				class="hidden glyphicon glyphicon-remove form-control-feedback"
 				aria-hidden="false">
 				</span>
-				<span id="passwordStatus"
+				<span id="pwstatus"
 				class="hidden help-block">Bitte gib ein Passwort ein, welches
 				mindestens ein gross und ein klein geschriebener Buchstabe enthält
 				und eine Zahl oder ein Sonderzeichen müssen sich auch in deinem
@@ -54,7 +54,7 @@
 				class="hidden glyphicon glyphicon-remove form-control-feedback"
 				aria-hidden="false">
 				</span>
-				<span id="passwordStatus"
+				<span id="repwstatus"
 				class="hidden help-block">Passwörter stimmen nicht überein
 				</span>
 		</div>
