@@ -2,7 +2,7 @@
 require_once '../repository\AdminRepository.php';
 
 
-if (!empty($frage)) { ?>
+if (!empty($fragen)) { ?>
 <table class="table table-hover mittig_admin">
 	<tr>
 		<th>Frage</th>
@@ -12,12 +12,13 @@ if (!empty($frage)) { ?>
 		<th>Akzeptieren</th>
 		<th>Ablehnen</th>
 	</tr>
-<?php foreach ($frage as $fragen): ?>
+<?php foreach ($fragen as $frage): ?>
+
 	<tr>
-		<td><?= $fragen->text; ?></td>
-		<td><?= $fragen->antwort; ?></td>
-		<td><?= $fragen->antwort; ?></td>
-		<td><?= $fragen->moralfrage; ?></td>
+		<td><?= $frage->text; ?></td>
+		<td><?= $frage->antwort; ?></td>
+		<td><?= $frage->antwort; ?></td>
+		<td><?= $frage->moralfrage; ?></td>
 		<td>
 			<div>
 				<button type="submit" name="login" class="btn btn-sm btn-success">Akzeptieren</button>

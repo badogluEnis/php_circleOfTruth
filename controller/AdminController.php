@@ -47,13 +47,40 @@ class AdminController
 			exit;
 		}
 
+		$Admin = new AdminRepository();
+
+		$fragen = $Admin->getFragen();
+		$antworten = $Admin->getAntworten();
+
+
+
+		$zusammensetzung = [];
+
+		foreach ($fragen as $frage) {
+			$antworten = [];
+			foreach ($antworten as $antwort) {
+				if($antwort->frage_id === $frage->id) {
+					$antworten[] = $antwort;
+				}
+			}
+
+			$zusammensetzung[] = [
+				'frage' => $frage,
+				'antworten' => $antworten,
+			];
+
+		}
+
+		print_r($zusammensetzung);
+
+
+
 
 		// In diesem Fall möchten wir dem Benutzer die View mit dem Namen
 		//   "default_index" rendern. Wie das genau funktioniert, ist in der
 		//   View Klasse beschrieben.
-		$Admin = new AdminRepository();
 		$view = new View('adminpanel');
-		$view->frage = $Admin->getFrage();
+		$view->fragen = $zusammensetzung;
 		$view->heading = 'Adminpanel';
 		$view->display();
 	}
