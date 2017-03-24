@@ -34,5 +34,5 @@ if (!empty($fragen)) { ?>
 <?php endforeach ?>
 </table>
 <?php } else {
-	echo '<h2>Keine Weitere Fragen offen.</h2>';
+	echo '<h2>Keine Weiteren Fragen offen.</h2>';
 }
