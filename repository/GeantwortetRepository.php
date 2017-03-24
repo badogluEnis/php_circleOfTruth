@@ -1,31 +1,37 @@
 <?php
 
 require_once '../lib/Repository.php';
+require_once '../lib/ConnectionHandler.php';
 
 
-class FrageRepository extends repository{
+class GeantwortetRepository extends repository{
 
-      protected $tableName = 'geantwortet';
+    protected $tableName = 'geantwortet';
 
 
 
-      public function create($person_id, $antwort_id, $zeit)
-        {
+    public function getAntworten() {
 
-            $query = "INSERT INTO $this->tableName (person_id, antwort_id, zeit) VALUES (?, ?, ?)";
+      $query = "SELECT * FROM $this->tableName g  JOIN antwort a on g.antwort_id = a.id WHERE person_id = (select benutzername FROM benutzer where id = ?) ORDER BY zeit DESC";
 
-            $statement = ConnectionHandler::getConnection()->prepare($query);
-            $statement->bind_param('iis', $person_id, $antwort_id, $zeit);
+      $statement = ConnectionHandler::getConnection ()->prepare( $query );
+      $statement->bind_param ('i', $SESSION['id']);
 
-            if (!$statement->execute()) {
-                throw new Exception($statement->error);
-            }
+      if (!$statement->execute()) {
+          throw new Exception($statement->error);
+      }
 
-            return $statement->insert_id;
-        }
+      $result = $statement->get_result();
 
+      if (!$result) {
+          throw new Exception($statement->error);
+      }
+
+      $rows = array();
+      while($row = $result->fetch_object()) {
+          $rows[] = $row;
+      }
+
+      return $rows;
+    }
 }
-
-
-
-?>

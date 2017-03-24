@@ -68,7 +68,6 @@ class AdminController
 				'frage' => $frage,
 				'antworten' => $passendeAntworten,
 			];
-
 		}
 
 
@@ -90,20 +89,15 @@ class AdminController
 		$Frage = new FrageRepository();
 		$Frage->acceptById($_GET['id']);
 
-		$view = new View('adminpanel');
-		$view->fragen = $zusammensetzung;
-		$view->heading = 'Adminpanel';
-		$view->display();
+		header('Location: /Admin');
 	}
 
 	public function denie() {
 
 		$Frage = new FrageRepository();
 		$Frage->denieById($_GET['id']);
-		$view = new View('adminpanel');
-		$view->fragen = $zusammensetzung;
-		$view->heading = 'Adminpanel';
-		$view->display();
+
+		header('Location: /Admin');
 	}
 
 

@@ -1,5 +1,7 @@
 <?php
 
+require_once '../repository\GeantwortetRepository.php';
+
 /**
  * Der Controller ist der Ort an dem es für jede Seite, welche der Benutzer
 * anfordern kann eine Methode gibt, welche die dazugehörende Businesslogik
@@ -36,8 +38,13 @@ class AnsweredController
 		// In diesem Fall möchten wir dem Benutzer die View mit dem Namen
 		//   "default_index" rendern. Wie das genau funktioniert, ist in der
 		//   View Klasse beschrieben.
+
+		$Antwort = new GeantwortetRepository();
+		$antwort = $Antwort->getAntworten();
+
 		$view = new View('recentlyAnswered');
-		$view->heading = 'K&Uumlrzlich beantwortet';
+		$view->antworten = $antwort;
+		$view->heading = 'Kürzlich beantwortet';
 		$view->display();
 	}
 }
