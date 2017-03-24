@@ -136,8 +136,3 @@ class FrageRepository extends repository{
 
 
 }
-
-
-
-
-?>
