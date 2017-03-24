@@ -11,7 +11,7 @@ class AdminRepository extends repository{
 
     public function getFragen() {
 
-        $query = "SELECT text, moralfrage, Freigegeben FROM $this->tableName WHERE freigegeben = 0";
+        $query = "SELECT id, text, moralfrage, Freigegeben FROM $this->tableName WHERE freigegeben = 0";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
 

@@ -1,6 +1,7 @@
 <?php
 
 require_once '../repository\AdminRepository.php';
+require_once '../repository/FrageRepository.php';
 
 /**
  * Der Controller ist der Ort an dem es für jede Seite, welche der Benutzer
@@ -53,26 +54,22 @@ class AdminController
 		$antworten = $Admin->getAntworten();
 
 
-
 		$zusammensetzung = [];
 
 		foreach ($fragen as $frage) {
-			$antworten = [];
+			$passendeAntworten = [];
 			foreach ($antworten as $antwort) {
 				if($antwort->frage_id === $frage->id) {
-					$antworten[] = $antwort;
+					$passendeAntworten[] = $antwort;
 				}
 			}
 
 			$zusammensetzung[] = [
 				'frage' => $frage,
-				'antworten' => $antworten,
+				'antworten' => $passendeAntworten,
 			];
 
 		}
-
-		print_r($zusammensetzung);
-
 
 
 
@@ -84,4 +81,44 @@ class AdminController
 		$view->heading = 'Adminpanel';
 		$view->display();
 	}
+
+
+
+
+	public function accept() {
+
+		$Frage = new FrageRepository();
+		$Frage->acceptById($frageId);
+
+
+
+
+	}
+
+	public function denie() {
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
