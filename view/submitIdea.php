@@ -43,7 +43,7 @@
 		</div>
 
 		<p class="radio">* Moralfrage bedeutet, dass es keine richtige Antwort
-			gibt. Trotzdem werden beide Antwortmöglichkeiten benötigt</p>
+			gibt. Trotzdem werden beide Antwortmöglichkeiten benötigt.</p>
 
 	</div>
 
