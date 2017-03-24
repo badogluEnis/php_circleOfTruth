@@ -35,23 +35,23 @@ class DefaultController {
 	 * welcher Controller und welche Methode aufgerufen wird, ist im Dispatcher
 	 * beschrieben.
 	 */
-	public function index() 
+	public function index()
 	{
-		
-		
+
+
 		// In diesem Fall möchten wir dem Benutzer die View mit dem Namen
 		// "default_index" rendern. Wie das genau funktioniert, ist in der
 		// View Klasse beschrieben.
 		if (isset($_SESSION['user'])) {
-			
-			
+
+
 			$frage = new FrageRepository();
-			
+
 			$fragen = $frage->getFragen();
 			$antworten = $frage->getAntworten();
-			
+
 			$zusammensetzung = [];
-			
+
 			foreach ($fragen as $frage) {
 				$passendeAntworten = [];
 				foreach ($antworten as $antwort) {
@@ -59,23 +59,24 @@ class DefaultController {
 						$passendeAntworten[] = $antwort;
 					}
 				}
-			
+
 				$zusammensetzung[] = [
 						'frage' => $frage,
 						'antworten' => $passendeAntworten,
 				];
-			
+
 			}
-			
-			
+
+
 				$view = new View ( 'hauptseite' );
+				$view->fragen = $zusammensetzung;
 				$view->heading = ' ';
 				$view->display ();
-				
-				
-				
-				
-				
+
+
+
+
+
 		}	else {
 				$view = new View ( 'startseite' );
 				$view->heading = 'Circle of truth';

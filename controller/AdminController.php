@@ -100,7 +100,6 @@ class AdminController
 
 		$Frage = new FrageRepository();
 		$Frage->denieById($_GET['id']);
-
 		$view = new View('adminpanel');
 		$view->fragen = $zusammensetzung;
 		$view->heading = 'Adminpanel';

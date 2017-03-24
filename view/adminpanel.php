@@ -26,7 +26,7 @@ if (!empty($fragen)) { ?>
 			<form action ="/admin/denie" method="POST">
 				<td>
 					<div>
-						<button type="submit" name="denie" class="btn btn-sm btn-danger">Ablehnen</button>
+						<a class="btn btn-sm btn-danger" href="/admin/denie?id=<?= $frage['frage']->id ?>">Ablehnen</a>
 					</div>
 				</td>
 			</form>
