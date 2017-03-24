@@ -62,7 +62,8 @@ require_once '../lib/ConnectionHandler.php';
 										<li><a href="/Admin">Adminpanel</a></li>
 										<?php
 									}?>
-									<li><a href="/Logout">Eingeloggt als: <?php echo $_SESSION ['user']['name']; ?></a></li>
+									<li><a href="#">Eingeloggt als: <?php echo $_SESSION ['user']['name']; ?></a></li>
+									<li><a href="/Logout">Logout</a></li>
 								<?php } ?>
 							</ul>
 						</div>

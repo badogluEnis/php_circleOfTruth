@@ -18,13 +18,12 @@ if (!empty($fragen)) { ?>
 		<td><?= $frage['frage']->text; ?></td>
 		<td><?= $frage['antworten'][0]->antwort; ?></td>
 		<td><?= $frage['antworten'][1]->antwort; ?></td>
-		<td><?= ($frage['frage']->moralfrage = 1) ? 'Nein' : 'Ja'; ?></td>
+		<td><?= ($frage['frage']->moralfrage == 1) ? 'Ja' : 'Nein'; ?></td>
 		<td>
-			<form action="/admin/accept" method="POST">
 				<div>
-					<button type="submit" name="accept" class="btn btn-sm btn-success">Akzeptieren</button>
+					<a class="btn btn-sm btn-success" href="/admin/accept?id=<?= $frage['frage']->id ?>">Akzeptieren</a>
 				</div></td>
-			</form><form action ="/admin/denie" method="POST">
+			<form action ="/admin/denie" method="POST">
 				<td>
 					<div>
 						<button type="submit" name="denie" class="btn btn-sm btn-danger">Ablehnen</button>

@@ -88,15 +88,23 @@ class AdminController
 	public function accept() {
 
 		$Frage = new FrageRepository();
-		$Frage->acceptById($frageId);
+		$Frage->acceptById($_GET['id']);
 
-
-
-
+		$view = new View('adminpanel');
+		$view->fragen = $zusammensetzung;
+		$view->heading = 'Adminpanel';
+		$view->display();
 	}
 
 	public function denie() {
 
+		$Frage = new FrageRepository();
+		$Frage->denieById($_GET['id']);
+
+		$view = new View('adminpanel');
+		$view->fragen = $zusammensetzung;
+		$view->heading = 'Adminpanel';
+		$view->display();
 	}
 
 
