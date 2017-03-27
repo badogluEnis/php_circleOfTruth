@@ -44,60 +44,17 @@ class AnswerController
 		// In diesem Fall möchten wir dem Benutzer die View mit dem Namen
 		//   "default_index" rendern. Wie das genau funktioniert, ist in der
 		//   View Klasse beschrieben.
-		$view = new View('adminpanel');
-		$view->fragen = $zusammensetzung;
-		$view->heading = 'Adminpanel';
+		$Antwort = new GeantwortetRepository();
+    $Antwort->insert($_SESSION ['user']['id'], $_GET['id']);
+
+		$antwort = $Antwort->getAntworten();
+		$richtig = $Antwort->getKorrekteAntworten();
+
+		$view = new View('answer');
+		$view->heading = '';
+		$view->antworten = $antwort;
+		$view->korrekt = $richtig;
 		$view->display();
 	}
-
-
-  public function press_right()
-  {
-
-    $view = new View('answer');
-    $view->heading = '';
-    $view->display();
-
-    $Antwort = new GeantwortetRepository();
-    $Antwort->insert($_SESSION ['user']['id'], $_GET['id']);
-  }
-
-  public function press_left()
-  {
-
-
-    $view = new View('answer');
-    $view->heading = '';
-    $view->display();
-
-    $Antwort = new GeantwortetRepository();
-    $Antwort->insert($_SESSION ['user']['id'], $_GET['id']);
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

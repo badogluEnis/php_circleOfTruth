@@ -46,11 +46,16 @@ class AnsweredController
 		//   "default_index" rendern. Wie das genau funktioniert, ist in der
 		//   View Klasse beschrieben.
 
+
+
 		$Antwort = new GeantwortetRepository();
 		$antwort = $Antwort->getAntworten();
+		$richtig = $Antwort->getKorrekteAntworten();
+
 
 		$view = new View('recentlyAnswered');
 		$view->antworten = $antwort;
+		$view->korrekt = $richtig;
 		$view->heading = 'Kürzlich beantwortet';
 		$view->display();
 	}

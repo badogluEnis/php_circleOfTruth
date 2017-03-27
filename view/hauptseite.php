@@ -21,8 +21,8 @@
 		<h2><?= $fragen[$index]['frage']->text; ?></h2>
 
 
-	<a href="/answer/press_right?id=<?= $fragen[$index]['antworten'][$fragenindex2]->id ?>"><button type="button" name="right" class="btn btn-lg btn-danger rundrechts"><?= $fragen[$index]['antworten'][$fragenindex2]->antwort; ?></button></a>
-	<a href="/answer/press_left?id=<?= $fragen[$index]['antworten'][$fragenindex]->id ?>"><button type="button" name ="left" class="btn btn-lg btn-success rundlinks"><?= $fragen[$index]['antworten'][$fragenindex]->antwort; ?></button></a>
+	<a href="/answer?id=<?= $fragen[$index]['antworten'][$fragenindex2]->id ?>"><button type="button" name="right" class="btn btn-lg btn-danger"><?= $fragen[$index]['antworten'][$fragenindex2]->antwort; ?></button></a>
+	<a href="/answer?id=<?= $fragen[$index]['antworten'][$fragenindex]->id ?>"><button type="button" name ="left" class="btn btn-lg btn-success"><?= $fragen[$index]['antworten'][$fragenindex]->antwort; ?></button></a>
 
 	<?php } else {
 		echo '<h2>Keine Fragen gefunden.</h2>';
