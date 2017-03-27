@@ -1,4 +1,9 @@
-	
+<?php
+	$page = 'register';
+	include('header.php');
+?>
+
+
 <div class="anmelden_registrieren">
 	<form action="/register/create" method ="POST" class="register">
 		<div class="register">
@@ -9,10 +14,10 @@
 			type="text"
 			class="form-control"
 			id="username"
-			aria-describedby="usernameStatus"> 
+			aria-describedby="usernameStatus">
 			<span
 			class="hidden glyphicon glyphicon-remove form-control-feedback"
-			aria-hidden="true"></span> 
+			aria-hidden="true"></span>
 			<span
 			id="usernameStatus"
 			class="help-block hidden">Bitte gib deinen Benutzernamen ein.</span>
@@ -20,7 +25,7 @@
 
 		<div class="register form-group">
 			<input name="password"
-				style="margin-top: 25px;"			
+				style="margin-top: 25px;"
 				data-custom-message="true"
 				required="required"
 				placeholder="Passwort"
@@ -34,15 +39,15 @@
 				</span>
 				<span id="pwstatus"
 				class="hidden help-block">Bitte gib ein Passwort ein, welches
-				mindestens ein gross und ein klein geschriebener Buchstabe enthält
-				und eine Zahl oder ein Sonderzeichen müssen sich auch in deinem
+				mindestens ein gross, ein klein geschriebener Buchstabe enthält
+				und eine Zahl oder ein Sonderzeichen müssen auch in deinem
 				Passwort enthalten sein.
 				</span>
 		</div>
-		
+
 				<div class="register">
 			<input name="repassword"
-				style="margin-top: 25px;"			
+				style="margin-top: 25px;"
 				data-custom-message="true"
 				required="required"
 				placeholder="Passwort wiederholen"
@@ -58,7 +63,7 @@
 				class="hidden help-block">Passwörter stimmen nicht überein
 				</span>
 		</div>
-		
+
 		<div class="form-group">
 			<div class="button">
 				<button type="submit" name="register" class="btn btn-lg btn-danger" style="margin-top: 25px;">Registrieren</button>

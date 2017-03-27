@@ -1,7 +1,5 @@
 <div class="anmelden_registrieren">
 
-
-
 	<form action="/login/doLogin" method="POST" class="register">
 		<div class="form-group">
 			<input type="text" required="required" name="name" placeholder="Benutzername" class="form-control">

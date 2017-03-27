@@ -1,5 +1,7 @@
-<h3>Sende uns hier deine Ideen für neue Fragen zu!</h3>
-<br>
+<?php
+?>
+
+<h3>Sende uns hier deine Ideen für neue Fragen zu!</h3><br>
 
 
 <form action="/idea/create" method="POST" class="senden">
