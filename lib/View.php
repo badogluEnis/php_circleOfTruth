@@ -62,6 +62,8 @@ class View
     public function __construct($viewfile)
     {
         $this->viewfile = "./../view/$viewfile.php";
+
+        $this->properties['page'] = $viewfile;
     }
 
     public function __set($key, $value)

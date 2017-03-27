@@ -1,7 +1,6 @@
 <div class="mittig_home">
 	<?php
 
-
 		require_once '../repository/FrageRepository.php';
 
 		$min=0;

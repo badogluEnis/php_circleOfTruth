@@ -52,17 +52,17 @@ require_once '../lib/ConnectionHandler.php';
 							<?php
 							if (isset($_SESSION['user'])) {
 								?>
-								<li><a href="/Default">Home</a></li>
-								<li><a href="/Answered">Kürzlich beantwortet</a></li>
-								<li><a href="/idea">Idee einsenden</a></li>
-								<li><a href="/About">Über uns</a></li>
+								<li class="<?php if($page=='hauptseite'){echo 'active';}?>"><a href="/Default" style="text-decoration: none;">Home</a></li>
+								<li class="<?php if($page=='recentlyAnswered'){echo 'active';}?>"><a href="/Answered" style="text-decoration: none;">Kürzlich beantwortet</a></li>
+								<li class="<?php if($page=='submitIdea'){echo 'active';}?>"><a href="/idea" style="text-decoration: none;">Idee einsenden</a></li>
+								<li class="<?php if($page=='aboutUs'){echo 'active';}?>"><a href="/About" style="text-decoration: none;">Über uns</a></li>
 								<?php
 									if ($_SESSION ['user']['admin']) {
 										?>
-										<li><a href="/Admin">Adminpanel</a></li>
+										<li class="menuitem <?php if($page=='adminpanel'){echo 'active';}?>"><a href="/Admin" style="text-decoration: none;">Adminpanel</a></li>
 										<?php
 									}?>
-									<li><a href="#">Eingeloggt als: <?php echo $_SESSION ['user']['name']; ?></a></li>
+									<li><a  style="text-decoration: none;" href="#">Eingeloggt als: <?php echo $_SESSION ['user']['name']; ?></a></li>
 									<li><a href="/Logout">Logout</a></li>
 								<?php } ?>
 							</ul>
