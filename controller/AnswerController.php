@@ -1,7 +1,6 @@
 <?php
 
-require_once '../repository\AdminRepository.php';
-require_once '../repository/FrageRepository.php';
+require_once '../repository/GeantwortetRepository.php';
 
 /**
  * Der Controller ist der Ort an dem es für jede Seite, welche der Benutzer
@@ -58,6 +57,9 @@ class AnswerController
     $view = new View('answer');
     $view->heading = '';
     $view->display();
+
+    $Antwort = new GeantwortetRepository();
+    $Antwort->insert($_SESSION ['user']['id'], $_GET['id']);
   }
 
   public function press_left()
@@ -67,6 +69,9 @@ class AnswerController
     $view = new View('answer');
     $view->heading = '';
     $view->display();
+
+    $Antwort = new GeantwortetRepository();
+    $Antwort->insert($_SESSION ['user']['id'], $_GET['id']);
   }
 
 

@@ -54,4 +54,9 @@ class AnsweredController
 		$view->heading = 'Kürzlich beantwortet';
 		$view->display();
 	}
+
+
+
+
+
 }
