@@ -1,5 +1,8 @@
 <?php
 
+require_once '../repository\AdminRepository.php';
+require_once '../repository/FrageRepository.php';
+
 /**
  * Der Controller ist der Ort an dem es für jede Seite, welche der Benutzer
 * anfordern kann eine Methode gibt, welche die dazugehörende Businesslogik
@@ -22,7 +25,7 @@
 *     - Daten welche z.B. von einem Formular kommen validieren und dem Model
 *         übergeben, damit sie in der Datenbank persistiert werden können.
 */
-class AboutController
+class AnswerController
 {
 	/**
 	 * Die index Funktion des DefaultControllers sollte in jedem Projekt
@@ -33,19 +36,63 @@ class AboutController
 	 */
 	public function index()
 	{
-
 		if(!isset($_SESSION['user'])) {
 			echo "<b>Error:</b> 401 Unauthorized";
 			header("HTTP/1.1 401 Unauthorized");
 	    exit;
 		}
 
-
 		// In diesem Fall möchten wir dem Benutzer die View mit dem Namen
 		//   "default_index" rendern. Wie das genau funktioniert, ist in der
 		//   View Klasse beschrieben.
-		$view = new View('aboutUs');
-		$view->heading = '&Uumlber uns';
+		$view = new View('adminpanel');
+		$view->fragen = $zusammensetzung;
+		$view->heading = 'Adminpanel';
 		$view->display();
 	}
+
+
+  public function press_right()
+  {
+
+    $view = new View('answer');
+    $view->heading = '';
+    $view->display();
+  }
+
+  public function press_left()
+  {
+
+
+    $view = new View('answer');
+    $view->heading = '';
+    $view->display();
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

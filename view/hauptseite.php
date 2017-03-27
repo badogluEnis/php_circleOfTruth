@@ -24,8 +24,8 @@
 	echo '<h2>Keine Fragen gefunden.</h2>';
 } ?>
 
-	<button type="button" class="btn btn-lg btn-success rundlinks"><?= $fragen[$index]['antworten'][$fragenindex]->antwort; ?></button>
-	<button type="button" class="btn btn-lg btn-danger rundrechts"><?= $fragen[$index]['antworten'][$fragenindex2]->antwort; ?></button>
+	<a href="/answer/press_right"><button type="button" name="right" class="btn btn-lg btn-danger rundrechts"><?= $fragen[$index]['antworten'][$fragenindex2]->antwort; ?></button></a>
+	<a href="/answer/press_left"><button type="button" name ="left" class="btn btn-lg btn-success rundlinks"><?= $fragen[$index]['antworten'][$fragenindex]->antwort; ?></button></a>
 
 
 
