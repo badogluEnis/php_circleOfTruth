@@ -63,7 +63,7 @@ require_once '../lib/ConnectionHandler.php';
 										<?php
 									}?>
 									<li><a  style="text-decoration: none;" href="#">Eingeloggt als: <?php echo $_SESSION ['user']['name']; ?></a></li>
-									<li><a href="/Logout">Logout</a></li>
+									<li><a style="text-decoration: none;"  href="/Logout">Logout</a></li>
 								<?php } ?>
 							</ul>
 						</div>

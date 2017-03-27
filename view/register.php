@@ -1,9 +1,3 @@
-<?php
-	$page = 'register';
-	include('header.php');
-?>
-
-
 <div class="anmelden_registrieren">
 	<form action="/register/create" method ="POST" class="register">
 		<div class="register">
