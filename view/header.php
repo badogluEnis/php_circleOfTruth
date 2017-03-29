@@ -26,6 +26,8 @@ require_once '../lib/ConnectionHandler.php';
 <link href="/css/style.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina"
 	rel="stylesheet">
+<script src="public/js/jquery-2.1.4.min.js"></script>
+<script src="public/js/Chart.js" ></script>
 
 
 
