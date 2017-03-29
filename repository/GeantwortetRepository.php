@@ -82,4 +82,77 @@ class GeantwortetRepository extends repository{
 
       $statement->close ();
     }
+
+    public function getStatistikByUserAntw1() {
+
+      $query = "SELECT count(antwort), antwort from geantwortet g join antwort a on a.id = g.antwort_id where antwort_id = (frage_id * 2 - 1);";
+
+      $statement = ConnectionHandler::getConnection ()->prepare($query);
+      $statement->bind_param ( 'i', $person_id );
+
+      if (!$statement->execute()) {
+          throw new Exception($statement->error);
+      }
+
+      $result = $statement->get_result();
+
+      if (!$result) {
+          throw new Exception($statement->error);
+      }
+
+      $row = $result->fetch_object();
+
+      return $row;
+    }
+
+    public function getStatistikByUserAntw2() {
+
+      $query = "SELECT count(antwort), antwort from geantwortet g join antwort a on a.id = g.antwort_id where antwort_id = (frage_id * 2);";
+
+      $statement = ConnectionHandler::getConnection ()->prepare($query);
+      $statement->bind_param ( 'i', $person_id );
+
+      if (!$statement->execute()) {
+          throw new Exception($statement->error);
+      }
+
+      $result = $statement->get_result();
+
+      if (!$result) {
+          throw new Exception($statement->error);
+      }
+
+      $row = $result->fetch_object();
+
+      return $row;
+    }
+
+
+    public function getStatistikByFrage() {
+
+      $query = "SELECT f.id AS frage_id, a.id AS antwort_id, a.antwort AS antwort, count(g.antwort_id) AS count from frage AS f JOIN antwort AS a ON f.id=a.frage_id LEFT JOIN geantwortet AS g ON a.id=g.antwort_id GROUP BY g.antwort_id";
+
+      $statement = ConnectionHandler::getConnection ()->prepare($query);
+
+      if (!$statement->execute()) {
+          throw new Exception($statement->error);
+      }
+
+      $result = $statement->get_result();
+
+      if (!$result) {
+          throw new Exception($statement->error);
+      }
+
+      $rows = array();
+      while($row = $result->fetch_object()) {
+          $rows[] = $row;
+      }
+
+      return $rows;
+    }
+
+
+
+
 }

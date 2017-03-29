@@ -51,11 +51,13 @@ class AnsweredController
 		$Antwort = new GeantwortetRepository();
 		$antwort = $Antwort->getAntworten();
 		$richtig = $Antwort->getKorrekteAntworten();
+		$antworten = $Antwort->getStatistikByFrage();
 
 
 		$view = new View('recentlyAnswered');
 		$view->antworten = $antwort;
 		$view->korrekt = $richtig;
+		$view->geantwortet = $antworten;
 		$view->heading = 'Kürzlich beantwortet';
 		$view->display();
 	}
