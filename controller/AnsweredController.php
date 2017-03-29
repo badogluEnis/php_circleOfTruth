@@ -1,6 +1,6 @@
 <?php
 
-require_once '../repository\GeantwortetRepository.php';
+require_once '../repository/GeantwortetRepository.php';
 
 /**
  * Der Controller ist der Ort an dem es für jede Seite, welche der Benutzer

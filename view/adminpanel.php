@@ -1,6 +1,6 @@
 <?php
 
-require_once '../repository\AdminRepository.php';
+require_once '../repository/AdminRepository.php';
 
 
 if (!empty($fragen)) { ?>
