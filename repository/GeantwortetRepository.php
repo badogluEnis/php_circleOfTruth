@@ -12,7 +12,7 @@ class GeantwortetRepository extends repository{
 
     public function getAntworten() {
 
-      $query = "SELECT g.id, person_id, antwort_id, zeit, a.antwort, a.is_korrekt, f.id, f.moralfrage, f.text FROM $this->tableName g JOIN antwort a on g.antwort_id = a.id JOIN frage f on f.id = a.frage_id WHERE person_id = ? ORDER BY zeit DESC LIMIT 10";
+      $query = "SELECT g.id, person_id, antwort_id, zeit, a.antwort, a.is_korrekt, f.id AS frage_id, f.moralfrage, f.text FROM $this->tableName g JOIN antwort a on g.antwort_id = a.id JOIN frage f on f.id = a.frage_id WHERE person_id = ? ORDER BY zeit DESC LIMIT 10";
 
       $statement = ConnectionHandler::getConnection ()->prepare($query);
       $statement->bind_param ('i', $_SESSION['user']['id']);
@@ -38,7 +38,7 @@ class GeantwortetRepository extends repository{
 
 
     public function getKorrekteAntworten() {
-      $query = "SELECT antwort from frage f join antwort a on f.id = a.frage_id where is_korrekt = 1";
+      $query = "SELECT antwort, frage_id from frage f join antwort a on f.id = a.frage_id where is_korrekt = 1";
 
       $statement = ConnectionHandler::getConnection ()->prepare($query);
 
@@ -61,7 +61,12 @@ class GeantwortetRepository extends repository{
       return $rows;
     }
 
-
+    /**
+     * [insert description]
+     * @param   $person_id  [description]
+     * @param   $antwort_id [description]
+     * @return              [description]
+     */
     public function insert($person_id, $antwort_id)
     {
 

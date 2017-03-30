@@ -15,7 +15,7 @@ if (!empty($antworten)) { ?>
 		 foreach ($antworten as $antwort) { ?>
 			<tr>
 				<td><?= $antwort->text; ?></td>
-				<td><?= $antwort->moralfrage ? '-' : $korrekt[$antwort->id - 1]->antwort; ?></td>
+				<td><?= $antwort->moralfrage ? '-' : $korrekt[$antwort->frage_id - 1]->antwort; ?></td>
 				<td><?= $antwort->antwort; ?></td>
 				<td>
 				</td>
@@ -25,4 +25,3 @@ if (!empty($antworten)) { ?>
 		<?php } else {
 			echo '<h2>Keine kürzlich beantworteten Fragen.</h2>';
 		}?>
-

@@ -57,15 +57,18 @@ require_once '../lib/ConnectionHandler.php';
 								<li class="<?php if($page=='hauptseite'){echo 'active';}?>"><a href="/Default" style="text-decoration: none;">Home</a></li>
 								<li class="<?php if($page=='recentlyAnswered'){echo 'active';}?>"><a href="/Answered" style="text-decoration: none;">Kürzlich beantwortet</a></li>
 								<li class="<?php if($page=='submitIdea'){echo 'active';}?>"><a href="/idea" style="text-decoration: none;">Idee einsenden</a></li>
+
 								<li class="<?php if($page=='aboutUs'){echo 'active';}?>"><a href="/About" style="text-decoration: none;">Über uns</a></li>
+
 								<?php
 									if ($_SESSION ['user']['admin']) {
 										?>
 										<li class="menuitem <?php if($page=='adminpanel'){echo 'active';}?>"><a href="/Admin" style="text-decoration: none;">Adminpanel</a></li>
 										<?php
 									}?>
-									<li><a  style="text-decoration: none;" href="#">Eingeloggt als: <?php echo $_SESSION ['user']['name']; ?></a></li>
+									<li><a style="text-decoration: none;" href="#">Eingeloggt als: <?php echo $_SESSION ['user']['name']; ?></a></li>
 									<li><a style="text-decoration: none;"  href="/Logout">Logout</a></li>
+
 								<?php } ?>
 							</ul>
 						</div>
