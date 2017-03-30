@@ -3,6 +3,8 @@
 
 		require_once '../repository/FrageRepository.php';
 
+		if (!empty($fragen)) {?>
+			<?php
 		$min=0;
 		$max = count($fragen) - 1;
 		$index = mt_rand($min,$max);
@@ -15,12 +17,10 @@
 		} else {
 			$fragenindex2 = 1;
 		}
+		?>
 
-		if (!empty($fragen)) {?>
-			<h1>Frage:</h1>
-			<h2><?= $fragen[$index]['frage']->text; ?></h2>
-
-
+		<h1>Frage:</h1>
+		<h2><?= $fragen[$index]['frage']->text; ?></h2>
 		<a href="/answer?id=<?= $fragen[$index]['antworten'][$fragenindex2]->id ?>"><button type="button" name="right" class="btn btn-lg btn-danger"><?= $fragen[$index]['antworten'][$fragenindex2]->antwort; ?></button></a>
 		<a href="/answer?id=<?= $fragen[$index]['antworten'][$fragenindex]->id ?>"><button type="button" name ="left" class="btn btn-lg btn-success"><?= $fragen[$index]['antworten'][$fragenindex]->antwort; ?></button></a>
 
